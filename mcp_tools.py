@@ -23,6 +23,9 @@ mcp.mount()
 # Pydantic model for the POST request body
 class TranscriptRequest(BaseModel):
     url: str
+    
+class SearchRequest(BaseModel):
+    url: str
 
 
 # This endpoint will not be registered as a tool, since it was added after the MCP instance was created
@@ -43,6 +46,14 @@ async def get_transcript(request: TranscriptRequest):
     transcript = " ".join([snippet.text for snippet in fetched_transcript])
 
     return {"transcript": f"{transcript}"}
+
+# Endpoint that given a search topic, searches google and formats the content of the first 3 responses
+# as a text file.
+@app.post("/v1/search", operation_id="search_web", response_model=dict[str, str])
+async def search_web(request: SearchRequest):
+    # TODO: Implement this
+    return {"search": "Function not yet implemented"}
+    
 
 
 # But if you re-run the setup, the new endpoints will now be exposed.
