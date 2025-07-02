@@ -28,6 +28,7 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 
 # Copy application code
 COPY mcp_tools.py .
+COPY mcp_yt.py .
 
 # Create user for security (optional but recommended)
 RUN useradd -m -u 1000 appuser && chown -R appuser:appuser /app

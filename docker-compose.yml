@@ -9,8 +9,6 @@ services:
       - "${PORT:-8070}:8070"
     volumes:
       # Mount local directories for persistent data if needed
-      - ./logs:/app/logs
-      - ./data:/app/data
       - ./assets:/app/assets
     deploy:
       resources:

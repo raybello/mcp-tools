@@ -30,7 +30,7 @@ import asyncio
 import sys
 
 # User Modules
-from tools.mcp_yt import ytDownloader
+from mcp_yt import ytDownloader
 
 #########################################################
 # Globals
