@@ -11,6 +11,7 @@ services:
       # Mount local directories for persistent data if needed
       - ./logs:/app/logs
       - ./data:/app/data
+      - ./assets:/app/assets
     deploy:
       resources:
         reservations:
@@ -43,3 +44,4 @@ services:
 volumes:
   logs:
   data:
+  assets:
