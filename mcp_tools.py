@@ -27,8 +27,7 @@ import subprocess
 import re
 import math
 import asyncio
-import yt_dlp
-
+import sys
 
 # User Modules
 from tools.mcp_yt import ytDownloader
@@ -75,7 +74,15 @@ MODEL_SIZE = "large-v2"
 # or run on GPU with INT8
 # MODEL = WhisperModel(MODEL_SIZE, device="cuda", compute_type="int8_float16")
 # or run on CPU with INT8
-MODEL = WhisperModel(MODEL_SIZE, device="cpu", compute_type="int8")
+if sys.platform == 'darwin': # for macOS
+    print("macOS")
+    MODEL = WhisperModel(MODEL_SIZE, device="cpu", compute_type="int8")
+elif sys.platform == 'linux': # for Linux
+    print("Linux")
+    MODEL = WhisperModel(MODEL_SIZE, device="cuda", compute_type="float16")
+else: # for Windows
+    print("Windows")
+    MODEL = WhisperModel(MODEL_SIZE, device="cuda", compute_type="float16")
 
 
 app = FastAPI()
