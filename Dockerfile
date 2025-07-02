@@ -8,7 +8,7 @@ ENV HF_HOME=/app/hf_cache
 
 
 # Setup packages
-RUN apt-get install -y wget curl git
+RUN apt-get update && apt-get install -y wget curl git
 RUN wget \
     https://developer.download.nvidia.com/compute/cudnn/9.10.2/local_installers/cudnn-local-repo-debian12-9.10.2_1.0-1_amd64.deb \
     && dpkg -i cudnn-local-repo-debian12-9.10.2_1.0-1_amd64.deb \
