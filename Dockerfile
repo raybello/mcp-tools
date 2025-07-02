@@ -6,7 +6,9 @@ ENV UVICORN_PORT=8070
 # Set the Hugging Face home directory for better model caching
 ENV HF_HOME=/app/hf_cache
 
+
 # Setup packages
+RUN apt-get install -y wget curl git
 RUN wget \
     https://developer.download.nvidia.com/compute/cudnn/9.10.2/local_installers/cudnn-local-repo-debian12-9.10.2_1.0-1_amd64.deb \
     && dpkg -i cudnn-local-repo-debian12-9.10.2_1.0-1_amd64.deb \
@@ -20,9 +22,6 @@ RUN apt-get update && apt-get install -y \
     cudnn \
     cudnn-cuda-12 \
     ffmpeg \
-    curl \
-    wget \
-    git \
     && rm -rf /var/lib/apt/lists/*
 
 # Create a symbolic link for `python` if it's not already present
