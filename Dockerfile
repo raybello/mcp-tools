@@ -35,7 +35,7 @@ RUN python -m venv .venv && \
 COPY mcp_tools.py .
 COPY mcp_yt.py .
 
-RUN mkdir -p assets
+RUN mkdir -p assets hf_cache
 
 # Expose the application port
 EXPOSE 8070
