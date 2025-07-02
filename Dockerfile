@@ -1,4 +1,4 @@
-FROM nvidia/cuda:12.8.1-runtime-ubuntu22.04
+FROM ubuntu:24.04
 
 # Prevent interactive prompts during package installation
 ENV DEBIAN_FRONTEND=noninteractive
