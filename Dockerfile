@@ -1,7 +1,10 @@
-FROM ubuntu:24.04
+FROM nvidia/cuda:12.8.1-runtime-ubuntu22.04
 
 # Prevent interactive prompts during package installation
 ENV DEBIAN_FRONTEND=noninteractive
+ENV UVICORN_PORT=8070
+# Set the Hugging Face home directory for better model caching
+ENV HF_HOME=/app/hf_cache
 
 # Update package list and install system dependencies
 RUN apt-get update && apt-get install -y \
