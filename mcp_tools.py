@@ -79,7 +79,7 @@ if sys.platform == 'darwin': # for macOS
     MODEL = WhisperModel(MODEL_SIZE, device="cpu", compute_type="int8")
 elif sys.platform == 'linux': # for Linux
     print("Linux")
-    MODEL = WhisperModel(MODEL_SIZE, device="cuda", compute_type="float16")
+    MODEL = WhisperModel(MODEL_SIZE, device="cuda", compute_type="float32")
 else: # for Windows
     print("Windows")
     MODEL = WhisperModel(MODEL_SIZE, device="cuda", compute_type="float16")
