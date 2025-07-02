@@ -32,9 +32,7 @@ RUN python -m venv .venv && \
 COPY mcp_tools.py .
 COPY mcp_yt.py .
 
-# Create non-root user for security and set ownership
-RUN useradd -m -u 1000 appuser && chown -R appuser:appuser /app
-USER appuser
+RUN mkdir -p assets
 
 # Expose the application port
 EXPOSE 8070
