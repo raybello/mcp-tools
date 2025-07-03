@@ -389,6 +389,7 @@ class VideoProcessor:
         
         for i, clip in enumerate(clips):
             clip_base = "_".join(clip["clip_title"].lower().split(" "))
+            clip_base = re.sub(r"[,\.:;\\/|\'\"]", "", clip_base)
             clip_name = f"{clip_base}.mp4"
             clip_subbed_name = f"{clip_base}_subbed.mp4"
             clip_sub = f"{clip_base}.srt"
