@@ -601,8 +601,8 @@ async def create_clips(request: CreateClipsRequest):
         gen_srt_video(clip_path, clip_sub_path, output_path=clip_subbed_path)
         logger.info(f"Added subtitles to clip: {clip_subbed_path}")
         
-        os.remove(clip_path)
-        logger.info(f"Deleted base clip: {clip_path}\n")
+        # os.remove(clip_path)
+        # logger.info(f"Deleted base clip: {clip_path}\n")
         
         list_of_clips.append(
             {
