@@ -34,10 +34,10 @@ services:
     # Health check to monitor service status
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8070/docs"]
-      interval: 30s
+      interval: 60s
       timeout: 10s
       retries: 3
-      start_period: 30s
+      start_period: 60s
 
 # Define named volumes for persistent data
 volumes:
