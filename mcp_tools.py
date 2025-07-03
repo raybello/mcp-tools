@@ -534,7 +534,7 @@ async def create_video(request: CreateVideoRequest):
                 )
                 
             video_file = str(video_item["url"]).split('=')[1]
-            video_file = Path(OUTPUT_PATH, f"{video_file}.m4a")
+            video_file = Path(OUTPUT_PATH, f"{video_file}.mp4")
             result["file_path"] = video_file
             
             logger.info(f"Downloaded video for: {video_item["title"]}")
